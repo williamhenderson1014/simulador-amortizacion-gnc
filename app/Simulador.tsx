@@ -186,8 +186,9 @@ export default function Simulador() {
                     className={s.gPunto}
                   />
                   <text
-                    x={grafico.px(grafico.cruceM) + 12}
-                    y={grafico.py(grafico.cruceV) - 12}
+                    x={grafico.px(grafico.cruceM) - 14}
+                    y={grafico.py(grafico.cruceV) - 16}
+                    textAnchor="end"
                     className={s.gCruceTexto}
                   >
                     acá se empareja
@@ -195,15 +196,10 @@ export default function Simulador() {
                 </g>
               ) : null}
 
-              <text x={grafico.px(MESES) - 4} y={grafico.py(nafta * MESES) - 12} textAnchor="end" className={s.gRotuloNafta}>
+              <text x={grafico.px(3)} y={grafico.py(nafta * 3) - 14} className={s.gRotuloNafta}>
                 siguiendo a nafta
               </text>
-              <text
-                x={grafico.px(MESES) - 4}
-                y={grafico.py(equipo.precio + gnc * MESES) + 22}
-                textAnchor="end"
-                className={s.gRotuloGnc}
-              >
+              <text x={grafico.px(3)} y={grafico.py(equipo.precio + gnc * 3) - 14} className={s.gRotuloGnc}>
                 con el equipo puesto
               </text>
             </svg>
