@@ -48,7 +48,12 @@ export default function Simulador() {
           )} Z`
         : "";
     const ticks = [0, 6, 12, 18, 24, 30, 36];
-    return { px, py, lineaNafta, lineaGnc, cruceM, cruceV, area, maxY, ticks };
+    const finNafta = py(nafta * MESES);
+    const finGnc = py(equipo.precio + gnc * MESES);
+    const naftaArriba = finNafta <= finGnc;
+    const rotNafta = naftaArriba ? finNafta - 11 : finNafta + 21;
+    const rotGnc = naftaArriba ? finGnc + 21 : finGnc - 11;
+    return { px, py, lineaNafta, lineaGnc, cruceM, cruceV, area, maxY, ticks, rotNafta, rotGnc };
   }, [nafta, gnc, equipo.precio, meses]);
 
   return (
@@ -185,21 +190,33 @@ export default function Simulador() {
                     r={6}
                     className={s.gPunto}
                   />
-                  <text
-                    x={grafico.px(grafico.cruceM) - 14}
-                    y={grafico.py(grafico.cruceV) - 16}
-                    textAnchor="end"
-                    className={s.gCruceTexto}
-                  >
-                    acá se empareja
-                  </text>
+                  {grafico.cruceM <= 26 ? (
+                    <text
+                      x={grafico.px(grafico.cruceM) - 14}
+                      y={grafico.py(grafico.cruceV) - 16}
+                      textAnchor="end"
+                      className={s.gCruceTexto}
+                    >
+                      acá se empareja
+                    </text>
+                  ) : null}
                 </g>
               ) : null}
 
-              <text x={grafico.px(3)} y={grafico.py(nafta * 3) - 14} className={s.gRotuloNafta}>
+              <text
+                x={grafico.px(MESES) - 6}
+                y={grafico.rotNafta}
+                textAnchor="end"
+                className={s.gRotuloNafta}
+              >
                 siguiendo a nafta
               </text>
-              <text x={grafico.px(3)} y={grafico.py(equipo.precio + gnc * 3) - 14} className={s.gRotuloGnc}>
+              <text
+                x={grafico.px(MESES) - 6}
+                y={grafico.rotGnc}
+                textAnchor="end"
+                className={s.gRotuloGnc}
+              >
                 con el equipo puesto
               </text>
             </svg>

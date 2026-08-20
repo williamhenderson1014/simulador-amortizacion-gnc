@@ -77,12 +77,12 @@ export default function Pagina() {
             <ul className={s.datoFilas}>
               <li>
                 <span className={s.datoNombre}>Nafta súper</span>
-                <span className={s.datoValor}>$ 1.320</span>
+                <span className={s.datoValor}>$ 2.250</span>
                 <span className={s.datoUnidad}>por litro</span>
               </li>
               <li>
                 <span className={s.datoNombre}>Gas natural</span>
-                <span className={s.datoValor}>$ 640</span>
+                <span className={s.datoValor}>$ 620</span>
                 <span className={s.datoUnidad}>por metro cúbico</span>
               </li>
             </ul>

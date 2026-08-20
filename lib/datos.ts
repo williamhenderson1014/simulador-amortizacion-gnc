@@ -17,8 +17,8 @@ export type Equipo = {
   nota: string;
 };
 
-export const PRECIO_NAFTA = 1320;
-export const PRECIO_GNC = 640;
+export const PRECIO_NAFTA = 2250;
+export const PRECIO_GNC = 620;
 
 export const AUTOS: Auto[] = [
   {
@@ -83,7 +83,7 @@ export const EQUIPOS: Equipo[] = [
     nombre: "5ta generación",
     cilindro: "Cilindro de 60 litros",
     autonomia: "Autonomía media",
-    precio: 1980000,
+    precio: 1600000,
     nota: "Inyección secuencial. Es la que entra en casi todo lo nafta inyectada de hoy.",
   },
   {
@@ -91,7 +91,7 @@ export const EQUIPOS: Equipo[] = [
     nombre: "3ra generación",
     cilindro: "Cilindro de 60 litros",
     autonomia: "Autonomía media",
-    precio: 1450000,
+    precio: 1250000,
     nota: "Más simple y más barata. No entra en todos los motores.",
   },
   {
@@ -99,7 +99,7 @@ export const EQUIPOS: Equipo[] = [
     nombre: "5ta generación",
     cilindro: "Cilindro de 80 litros",
     autonomia: "Autonomía larga",
-    precio: 2240000,
+    precio: 1850000,
     nota: "Para el que hace muchos kilómetros y no quiere cargar todos los días.",
   },
 ];
